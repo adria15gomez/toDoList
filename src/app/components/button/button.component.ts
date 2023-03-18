@@ -7,9 +7,12 @@ import { Component, Input } from '@angular/core';
 })
 export class ButtonComponent {
   @Input() name: string;
+  @Input() link: string;
 
+  
   constructor() {
     this.name = 'Button';
+    this.link = './';
   }
 } 
 

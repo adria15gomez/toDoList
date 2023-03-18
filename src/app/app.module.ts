@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { GridComponent } from '../app/components/grid/grid.component';
 import { ButtonComponent } from '../app/components/button/button.component';
 import { HomeComponent } from './components/pages/home/home.component';
-
+import { ViewoneComponent } from './components/pages/viewone/viewone.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +14,7 @@ import { HomeComponent } from './components/pages/home/home.component';
     GridComponent,
     ButtonComponent,
     HomeComponent,
+    ViewoneComponent,
  
   ],
   imports: [

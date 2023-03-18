@@ -8,3 +8,7 @@ import { Component } from '@angular/core';
 export class HomeComponent {
 
 }
+
+document.addEventListener("touchmove", function(e){
+  e.preventDefault();
+}, false);

@@ -3,6 +3,12 @@
   padding: 0;
 }
 
-.bg-image {
+.containerHome {
   background-image: url("src/assets/images/fondo.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.no-scroll {
+  overflow: hidden;
 }
