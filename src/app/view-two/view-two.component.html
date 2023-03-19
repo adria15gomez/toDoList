@@ -1,0 +1,45 @@
+<div class="bg-pink-100 rounded-lg shadow overflow-hidden">
+    <form (ngSubmit)="guardarTarea()" class="p-2">
+        <div class="mb-4">
+            <label class="block text-gray-700 font-bold mb-2">Título</label>
+            <input [(ngModel)]="titulo" name="titulo" type="text"
+                class="appearance-none border-none rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+        </div>
+        <div class="mb-2">
+            <label class="block text-gray-700 font-bold mb-2">Descripción</label>
+            <textarea [(ngModel)]="descripcion" name="descripcion"
+                class="appearance-none border-none rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></textarea>
+        </div>
+        <div class="flex items-center justify-between">
+            <button type="submit"
+                class="text-black font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                <img src="../../assets/icons/add.svg" alt="">
+                {{ tareaSeleccionada ? 'Guardar cambios' : 'Add item' }}
+            </button>
+
+            <button *ngIf="tareaSeleccionada" (click)="cancelarEdicion()">
+                <img src="../../assets/icons/cancel.svg" alt="">
+            </button>
+        </div>
+    </form>
+
+    <ul class="divide-y divide-gray-200">
+        <li *ngFor="let tarea of tareas" class="px-4 py-4 sm:px-6">
+            <div class="flex items-center justify-between">
+                <p class="text-lg font-medium text-gray-900">{{ tarea.titulo }}</p>
+
+                <button (click)="editarTarea(tarea)">
+                    <img src="../../assets/icons/update.svg" alt="editar">
+                </button>
+
+                <div class="ml-2 flex-shrink-0">
+                    <button (click)="eliminarTarea(tarea.id)">
+                        <img src="../../assets/icons/delete.svg" alt="delete">
+                    </button>
+                </div>
+            </div>
+            <p class="mt-1 text-gray-500">{{ tarea.descripcion }}</p>
+        </li>
+    </ul>
+
+</div>

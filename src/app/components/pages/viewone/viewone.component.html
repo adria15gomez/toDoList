@@ -1,17 +1,16 @@
-<div class="itemOne">
-    <svg width="50" height="50" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"
-        xmlns:xlink="http://www.w3.org/1999/xlink">
-        <rect width="64" height="64" fill="url(#pattern0)" />
-        <defs>
-            <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
-                <use xlink:href="#image0_35_2" transform="scale(0.015625)" />
-            </pattern>
-            <image id="image0_35_2" width="64" height="64"
-                xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAACXBIWXMAAAsTAAALEwEAmpwYAAAESElEQVR4nO1bXUwUVxQ+lPpUZR/7JDEaJWmCgHPXjQKFlB+x+tCkxDfTRB9aYhFl9cHEhCZ90tTGNm1JOrMvbaP2JzHbxqhhKcxAlB+rSyjFiBAFxRi7rAxJ07V2T3O2A8zssrDAeu+4O1/yJZudn73fd8859+zkDoAD/vh6W2e5ImkXZKY+lJkakSX1gSyp531SVxlkMloqOl6VmdaqMA2TUZbUL+k8yETIS4g3mwCZBsWtvpmK+HkTtFLIJCiSdsEikKn3FLdW9c3Wq6/5WFe1wtT7VhPUc5BJkJn60CLQrVVZjkudNXFp8AAyCQpTn5kFfvFGx1rL8Z3d6+Ii4Bm8zFAkdQ/NYrIcp7BfLAIslLQJH+vaDS8TFEmbWLTIMfUeiaZIUCS1NrEGJBTFcbAT3r87vblxRG8/clf/yzs2g2YeHp1Judovh57gVAK335rSPcHQRTbwpICr+KOjuh4vfJYH7ujcDJg3IjTFBkPruRjQOKK3JxNP3PV7mLsBBn/gYsCRBcJ+lvXDT2OD+azmelrFn629nooB01wM8Bpi28MRjESjGAhH8IMRPTbzs4Op/3Y8bSaQ+He/G0/FAORqwPMoxvBPFLF0YOnB8SBXA8wQLdwxIOhEAGZFCjSdGMLW0m78sGU4+1Kg4ePbcytDa1m3vQwo7pnEPF8Acz75EeH098siXeNS2rCkZ9Ii5lDLcGy2G0/+gfu/GkPZPb80Nh8fstcymOcLLFt4PF2+NosYEj/3Z8jdNff5o/du4o7fQuINCIQj+Pe/UWwLRzD3059WbQDdwyzmWPNgQlN06p0+LO/50x7LoNdECuF0R0BpfygmeFb859XXsOrXx/bpA7wmUg0gASuuAb5AQg0g1l5+hGfe7sUze3pw96XE47YxwGODLlCYAU2jWW7AwTt6dhtQZ/obnFWdoHdsBvcNT3MTb5tOsGn0/7A3z7zITpBdm8CSK4NY9MsNPgZ4FnBeVCcodY5gkb9/jsIMyBXQCdLMm8ULNcAloBOMhb1dDCgW0AlSztvGAI8Axot3DPA7EYAZnwJNpk4w61KgIa4TtJUBxQI6QVsZkCegE7SVAbkCOkFbGeAS0AnayoBiEZ2gnQzwOJ3gFHcTnAjwOymAWVsD3L2TmZUCzPRcbyFhqZKLAdtjuzPTJz7+ud7K2adzMcATDF1M58ynR3w/bv35pp+LAWzgSQFtTU2HAQs911uReH9fuOjyrQ1cDCDQvlzamkq7M1e1lq8y54v8fTM081zFO3CQgDUA4AKA1wEgHwC2AEAhALgBgF6GLAeASgB4CwDoTZFdAFAHAHsN1hnfVRvnVBrXlBn3KDTumW/8hsv4TWFYBwCbaEU0Br1XEKuNMdBYLO8gvSi8QvVPoOClyIwxZrUBOcABawFgo5GfIlOgyhjDRl4pAEmwWBGkV2CpoFUYBY4GnawI0jE6h86la+jaF1oE/wNrCtzJ9z1QdAAAAABJRU5ErkJggg==" />
-        </defs>
-    </svg>
-    <p class="text-center text-gray-500 dark:text-gray-400">Checklist</p>
-    <button
-        class="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:focus:ring-yellow-900"
-        [routerLink]="link"></button>
+<div class="itemOne flex items-center mr-5 mx-auto my-2 mt-7 ml-4 space-x-4">
+    <img src="../../../../assets/icons/checklist.svg" alt="Checklist">
+
+    <p class="text-center text-gray-900 dark:text-gray-400">Checklist</p>
+    <button [ngClass]="buttonClass" [routerLink]="'/view-two'">Created New</button>
+
+</div>
+<br>
+<div class="itemOne flex items-center mr-5 mx-auto my-2 mt-7 ml-4 space-x-4">
+    <img src="../../../../assets/icons/notes.svg" alt="Block Notes">
+
+
+    <p class="text-center text-gray-900 dark:text-gray-400">Make a nota</p>
+    <button [ngClass]="buttonClass" [routerLink]="'/view-two'">Created New</button>
+
 </div>
