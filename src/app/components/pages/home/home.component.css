@@ -3,12 +3,32 @@
   padding: 0;
 }
 
-.containerHome {
-  background-image: url("src/assets/images/background.png");
-  background-repeat: no-repeat;
-  background-size: 100%;
+body {
+  height: 100vh;
 }
 
-.no-scroll {
+.containerHome {
+  width: 100%;
+  max-width: 100%;
+  height: 100vh;
+  background-image: url("src/assets/images/background.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: bottom center;
   overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.containerHome svg {
+  width: 100%;
+  height: 100%;
+}
+
+@media only screen and (max-width: 390px) {
+  .containerHome {
+    max-width: 100%;
+    height: 100vh;
+  }
 }

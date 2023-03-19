@@ -6,51 +6,51 @@ import { Component  } from '@angular/core';
   styleUrls: ['./view-two.component.css']
 })
 export class ViewTwoComponent {
-  tareas: { id: number, titulo: string, descripcion: string }[] = [];
-  titulo = '';
-  descripcion = '';
-  tareaSeleccionada: { id: number, titulo: string, descripcion: string } | null = null;
+  tasks: { id: number, title: string, description: string }[] = [];
+  title = '';
+  description = '';
+  selectedTask: { id: number, title: string, description: string } | null = null;
 
-  agregarTarea() {
-    const id = this.tareas.length + 1;
-    this.tareas.push({id, titulo: this.titulo, descripcion: this.descripcion});
-    this.titulo = '';
-    this.descripcion = '';
+  addTask() {
+    const id = this.tasks.length + 1;
+    this.tasks.push({id, title: this.title, description: this.description});
+    this.title = '';
+    this.description = '';
   }
 
-  editarTarea(tarea: { id: number, titulo: string, descripcion: string }) {
-    this.tareaSeleccionada = tarea;
-    this.titulo = tarea.titulo;
-    this.descripcion = tarea.descripcion;
+  editTask(task: { id: number, title: string, description: string }) {
+    this.selectedTask = task;
+    this.title = task.title;
+    this.description = task.description;
   }
 
-  eliminarTarea(id: number) {
-    this.tareas = this.tareas.filter(t => t.id !== id);
+  deleteTask(id: number) {
+    this.tasks = this.tasks.filter(t => t.id !== id);
   }
 
-  guardarTarea() {
-    if (this.tareaSeleccionada !== null) {
-      const tareaActualizada = {
-        id: this.tareaSeleccionada.id,
-        titulo: this.titulo,
-        descripcion: this.descripcion
+  saveTask() {
+    if (this.selectedTask !== null) {
+      const updatedTask = {
+        id: this.selectedTask.id,
+        title: this.title,
+        description: this.description
       };
-      const tareaIndex = this.tareas.findIndex(t => t.id === tareaActualizada.id);
-      this.tareas[tareaIndex] = tareaActualizada;
-      this.titulo = '';
-      this.descripcion = '';
-      this.tareaSeleccionada = null;
+      const taskIndex = this.tasks.findIndex(t => t.id === updatedTask.id);
+      this.tasks[taskIndex] = updatedTask;
+      this.title = '';
+      this.description = '';
+      this.selectedTask = null;
     } else {
-      const id = this.tareas.length + 1;
-      this.tareas.push({id, titulo: this.titulo, descripcion: this.descripcion});
-      this.titulo = '';
-      this.descripcion = '';
+      const id = this.tasks.length + 1;
+      this.tasks.push({id, title: this.title, description: this.description});
+      this.title = '';
+      this.description = '';
     }
   }
 
-  cancelarEdicion() {
-    this.tareaSeleccionada = null;
-    this.titulo = '';
-    this.descripcion = '';
+  cancelEdition() {
+    this.selectedTask = null;
+    this.title = '';
+    this.description = '';
   }
 }

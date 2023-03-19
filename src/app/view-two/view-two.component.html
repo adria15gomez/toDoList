@@ -1,44 +1,51 @@
 <div class="bg-pink-100 rounded-lg shadow overflow-hidden">
-    <form (ngSubmit)="guardarTarea()" class="p-2">
+    <form (ngSubmit)="saveTask()" class="p-2">
         <div class="mb-4">
-            <label class="block text-gray-700 font-bold mb-2">Título</label>
-            <input [(ngModel)]="titulo" name="titulo" type="text"
+            <label class="block text-gray-700 font-bold mb-2">Title</label>
+            <input [(ngModel)]="title" name="title" type="text"
                 class="appearance-none border-none rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
         </div>
         <div class="mb-2">
-            <label class="block text-gray-700 font-bold mb-2">Descripción</label>
-            <textarea [(ngModel)]="descripcion" name="descripcion"
+            <label class="block text-gray-700 font-bold mb-2">Description</label>
+            <textarea [(ngModel)]="description" name="description"
                 class="appearance-none border-none rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></textarea>
         </div>
         <div class="flex items-center justify-between">
             <button type="submit"
                 class="text-black font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
-                <img src="../../assets/icons/add.svg" alt="">
-                {{ tareaSeleccionada ? 'Guardar cambios' : 'Add item' }}
+                <ng-container *ngIf="!selectedTask">
+                    <img src="../../assets/icons/add.svg" alt="Add task">
+                </ng-container>
+                <ng-container *ngIf="selectedTask">
+                    <img src="../../assets/icons/save.svg" alt="Save changes">
+                </ng-container>
+                {{ selectedTask ? 'Save changes' : 'Add item' }}
             </button>
 
-            <button *ngIf="tareaSeleccionada" (click)="cancelarEdicion()">
-                <img src="../../assets/icons/cancel.svg" alt="">
-            </button>
+            <div class="ml-2.5 flex-shrink-0">
+                <button *ngIf="selectedTask" (click)="cancelEdition()">
+                    <img src="../../assets/icons/cancel.svg" alt="">
+                </button>
+            </div>
         </div>
     </form>
 
     <ul class="divide-y divide-gray-200">
-        <li *ngFor="let tarea of tareas" class="px-4 py-4 sm:px-6">
+        <li *ngFor="let task of tasks" class="px-4 py-4 sm:px-6">
             <div class="flex items-center justify-between">
-                <p class="text-lg font-medium text-gray-900">{{ tarea.titulo }}</p>
+                <p class="text-lg font-medium text-gray-900">{{ task.title }}</p>
 
-                <button (click)="editarTarea(tarea)">
-                    <img src="../../assets/icons/update.svg" alt="editar">
+                <button (click)="editTask(task)">
+                    <img src="../../assets/icons/update.svg" alt="edit">
                 </button>
 
                 <div class="ml-2 flex-shrink-0">
-                    <button (click)="eliminarTarea(tarea.id)">
+                    <button (click)="deleteTask(task.id)">
                         <img src="../../assets/icons/delete.svg" alt="delete">
                     </button>
                 </div>
             </div>
-            <p class="mt-1 text-gray-500">{{ tarea.descripcion }}</p>
+            <p class="mt-1 text-gray-500">{{ task.description }}</p>
         </li>
     </ul>
 
